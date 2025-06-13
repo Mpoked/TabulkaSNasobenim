@@ -3,6 +3,7 @@ import javax.swing.table.AbstractTableModel;
 
 public class CisloTableModel extends AbstractTableModel {
     private int cislo;
+    private String[] columnNames = {"Násobek", "Výsledek"};
 
     public CisloTableModel(int cislo){
         this.cislo = cislo;
@@ -33,11 +34,7 @@ public class CisloTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int columnIndex) {
-        return switch(columnIndex) {
-            case 0 -> "Pořadí";
-            case 1 -> "Název";
-            default -> throw new RuntimeException("Špatné číslo sloupce!");
-        };
+        return columnNames[columnIndex];
     }
 
 
